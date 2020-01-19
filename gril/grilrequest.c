@@ -807,10 +807,10 @@ void g_ril_request_set_smsc_address(GRil *gril,
 }
 
 void g_ril_request_dial(GRil *gril,
-					const struct ofono_phone_number *ph,
-					gboolean isEmergency,
-					enum ofono_clir_option clir,
-					struct parcel *rilp)
+			const struct ofono_phone_number *ph,
+			gboolean isEmergency,
+			enum ofono_clir_option clir,
+			struct parcel *rilp)
 {
 	const char *phoneNoString;
 	parcel_init(rilp);
@@ -834,8 +834,8 @@ void g_ril_request_dial(GRil *gril,
 	parcel_w_int32(rilp, 0);
 
 	g_ril_append_print_buf(gril, "(%s,%d,0,0)",
-							phoneNoString,
-							clir);
+				phoneNoString,
+				clir);
 }
 
 void g_ril_request_answer(GRil *gril,
